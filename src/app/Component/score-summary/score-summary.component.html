@@ -1,0 +1,18 @@
+<h2>Scores for Each Player (Round {{ round + 1 }})</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th *ngFor="let player of players">Round {{ player.scores.length }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of players; let i = index">
+      <td>{{ player.name }}</td>
+      <td *ngFor="let score of player.scores; let j = index">
+        {{ score }}
+      </td>
+      {{player.totalScore}}
+    </tr>
+  </tbody>
+</table>

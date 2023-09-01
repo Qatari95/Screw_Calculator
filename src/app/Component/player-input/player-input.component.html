@@ -1,0 +1,19 @@
+<div>
+    <h2>Enter Players' Names</h2>
+    <form (ngSubmit)="addPlayer()">
+      <div *ngFor="let player of players; let i = index">
+        <label for="player{{ i }}">Player {{ i + 1 }}:</label>
+        <input
+          type="text"
+          id="player{{ i }}"
+          [(ngModel)]="players[i].name"
+          required
+          name="name"
+        >
+      </div>
+      <button type="submit" [disabled]="!canAddPlayer()">Add Player</button>
+      <!-- Existing code for player names input -->
+      <button (click)="goToScoreEntry()">Next</button>
+    </form>
+  </div>
+  

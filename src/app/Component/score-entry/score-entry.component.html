@@ -1,0 +1,13 @@
+<h2>Enter Scores for Each Round</h2>
+<form (ngSubmit)="submitScores()">
+  <div *ngFor="let player of players; let i = index">
+    <label for="player{{ i }}">{{ player.name }}:</label>
+    <input
+      type="number"
+      id="player{{ i }}"
+      [(ngModel)]="players[i].scores[round]" 
+      required
+    >
+  </div>
+  <button type="submit">Submit Scores</button>
+</form>
